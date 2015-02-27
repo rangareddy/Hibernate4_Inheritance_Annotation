@@ -23,14 +23,17 @@ public class HibernateUtil {
 		Configuration configuration = new Configuration();
 		configuration.configure("hibernate.cfg.xml");
 		
-		/*configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_concrete_class.Person.class);
+		// One table per one concrete class 
+		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_concrete_class.Person.class);
 		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_concrete_class.Employee.class);
-		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_concrete_class.PermanentEmployee.class); */
+		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_concrete_class.PermanentEmployee.class); 
 		
-		/*configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_hierarchy.Person.class);
+		// One table per all hierarchical classes 
+		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_hierarchy.Person.class);
 		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_hierarchy.Employee.class);
-		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_hierarchy.PermanentEmployee.class); */
-		
+		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_hierarchy.PermanentEmployee.class); 
+
+		// One table per one concrete sub class 
 		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_subclass.Person.class);
 		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_subclass.Employee.class);
 		configuration.addAnnotatedClass(com.varasofttech.pojo.table_per_subclass.PermanentEmployee.class); 
